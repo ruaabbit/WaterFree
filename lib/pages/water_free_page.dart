@@ -39,10 +39,12 @@ class _WaterFreePageState extends State<WaterFreePage> {
                   onPressed: () {
                     Storage.cardNum = cardNumController.text;
                   },
-                  icon: Icon(Icons.play_arrow),
+                  icon: Icon(Icons.save),
                   label: Text('保存卡号'),
                 ),
                 ElevatedButton.icon(
+                  icon: Icon(Icons.question_mark),
+                  label: Text('如何获取卡号？'),
                   onPressed: () {
                     // 弹窗显示两张图片(guide1和guide2)，用于告诉用户如何获取卡号
                     showDialog(
@@ -55,7 +57,7 @@ class _WaterFreePageState extends State<WaterFreePage> {
                             children: [
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Image.asset(
                                     'assets/images/guide1.jpg',
@@ -81,8 +83,6 @@ class _WaterFreePageState extends State<WaterFreePage> {
                       },
                     );
                   },
-                  icon: Icon(Icons.play_arrow),
-                  label: Text('如何获取卡号？'),
                 ),
               ],
             ),
