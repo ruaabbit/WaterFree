@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:provider/provider.dart';
+import 'package:waterfree/pages/index_page.dart';
 
-import 'pages/water_free_page.dart';
 import 'pages/waterfree_favorites_page.dart';
+import 'pages/waterfree_page.dart';
 import 'utils/utils.dart';
 
 void main() async {
@@ -46,14 +47,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
 
   final pages = const [
+    IndexPage(),
     WaterFreePage(),
     WaterFavoritesPage(),
   ];
 
   final description = const [
+    'Index',
     'WaterFree',
     'WaterFavorites',
   ];
@@ -80,6 +83,10 @@ class _MyHomePageState extends State<MyHomePage> {
           selectedIndex: _selectedIndex,
           onDestinationSelected: _onDestinationSelected,
           children: [
+            NavigationDrawerDestination(
+              icon: Icon(Icons.home),
+              label: Text('Index'),
+            ),
             NavigationDrawerDestination(
               icon: Icon(Icons.water),
               label: Text('WaterFree'),
